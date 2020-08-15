@@ -8,11 +8,11 @@ pipeline {
         stage('Validate') {
             agent {
                 docker {
-                    image 'python:3.9-rc-buster'
+                    image 'docker-pyyaml'
                 }
             }
             steps {
-                sh "python -c 'import yaml, sys; yaml.safe_load(sys.stdin)' < 1.yaml"
+                sh "python3 -c 'import yaml, sys; yaml.safe_load(sys.stdin)' < 1.yaml"
             }
         }
         
