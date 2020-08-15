@@ -12,7 +12,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'python -c 'import yaml, sys; yaml.safe_load(sys.stdin)' < 1.yaml'
+                sh "python -c 'import yaml, sys; yaml.safe_load(sys.stdin)' < 1.yaml"
             }
         }
         
