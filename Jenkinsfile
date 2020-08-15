@@ -4,6 +4,19 @@ pipeline {
         skipStagesAfterUnstable()
     }
     stages {
+        
+        stage('Validate') {
+            agent {
+                docker {
+                    image 'python:2-alpine'
+                }
+            }
+            steps {
+                sh 'python -c 'import yaml, sys; yaml.safe_load(sys.stdin)' < yaml/1.yaml'
+            }
+        }
+        
+        
         stage('Build') {
             agent {
                 docker {
