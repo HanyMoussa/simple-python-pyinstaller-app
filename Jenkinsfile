@@ -8,7 +8,7 @@ pipeline {
         stage('Validate') {
             agent {
                 docker {
-                    image 'bitnami/python'
+                    image 'python:3.9-rc-buster'
                 }
             }
             steps {
