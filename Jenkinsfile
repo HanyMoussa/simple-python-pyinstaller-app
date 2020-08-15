@@ -8,7 +8,7 @@ pipeline {
         stage('Validate') {
             agent {
                 docker {
-                    image 'docker-pyyaml'
+                    image 'biowdl/docker-pyyaml'
                 }
             }
             steps {
