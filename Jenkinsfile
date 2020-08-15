@@ -8,7 +8,7 @@ pipeline {
         stage('Validate') {
             agent {
                 docker {
-                    image 'python:2-alpine'
+                    image 'bitnami/python'
                 }
             }
             steps {
