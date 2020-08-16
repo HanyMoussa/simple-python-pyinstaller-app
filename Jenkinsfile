@@ -5,6 +5,19 @@ pipeline {
     }
     stages {
         
+        
+        stage('kustomize') {
+            agent {
+                docker {
+                    image 'traherom/kustomize-docker'
+                }
+            }
+            steps {
+                sh "kustomize build ~/ldap/base"
+            }
+        }
+        
+        
         stage('Validate') {
             agent {
                 docker {
