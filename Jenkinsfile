@@ -13,7 +13,7 @@ pipeline {
                 }
             }
             steps {
-                sh "kustomize build ~/ldap/base"
+                sh "kustomize build /ldap/base"
             }
         }
         
