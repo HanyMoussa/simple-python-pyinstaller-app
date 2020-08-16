@@ -13,7 +13,8 @@ pipeline {
                 }
             }
             steps {
-                sh "kustomize build ldap/overlays/staging"
+                sh "cd ldap/overlays/staging"
+                sh "kustomize build"
             }
         }
         
