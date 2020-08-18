@@ -13,7 +13,7 @@ pipeline {
                 }
             }
             steps {
-                validate(stage:'ldap/overlays/staging', path:'.')
+                validate(stage:'ldap/overlays/staging', path:'/var/lib/jenkins/workspace/python app pipeline')
             }
         }
         
