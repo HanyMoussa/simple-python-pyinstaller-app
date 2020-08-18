@@ -13,7 +13,7 @@ pipeline {
                 }
             }
             steps {
-                sh "kustomize build ldap/overlays/staging"
+                validate(stage:'ldap/overlays/staging', path:'.')
             }
         }
         
