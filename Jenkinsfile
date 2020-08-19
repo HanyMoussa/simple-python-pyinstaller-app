@@ -14,13 +14,14 @@ pipeline {
             }
             steps {
                 sh 'kustomize build ldap/overlays/staging'
+                 validate(stage:'production', path:'.')
             }
         }
         
         stage('kustomizePlugin') {
             agent none            
             steps {
-                validate(stage:'.', path:'.')
+                validate(stage:'production', path:'.')
             }
         }
         
