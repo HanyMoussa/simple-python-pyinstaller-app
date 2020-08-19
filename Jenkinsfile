@@ -18,8 +18,7 @@ pipeline {
         }
         
         stage('kustomizePlugin') {
-            agent none
-            }
+            agent none            
             steps {
                 validate(stage:'.', path:'.')
             }
