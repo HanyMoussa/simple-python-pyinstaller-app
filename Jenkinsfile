@@ -21,7 +21,6 @@ pipeline {
         stage('kustomizePlugin') {
             agent any
             steps {
-                sh 'kustomize build ldap/overlays/staging'
                 validate(stage:'production', path:'.')
             }
         }
