@@ -14,26 +14,7 @@ pipeline {
             }
             steps {
                 sh 'kustomize build ldap/overlays/staging'
-                 validate(stage:'production', path:'.')
-            }
-        }
-        
-        stage('kustomizePlugin') {
-            agent none            
-            steps {
                 validate(stage:'production', path:'.')
-            }
-        }
-        
-        
-        stage('Validate') {
-            agent {
-                docker {
-                    image 'biowdl/pyyaml'
-                }
-            }
-            steps {
-                sh "python3 -c 'import yaml, sys; yaml.safe_load(sys.stdin)' < 1.yaml"
             }
         }
         
