@@ -20,7 +20,7 @@ pipeline {
         stage('kustomizePlugin') {
             agent any
             steps {
-                validate(stage:'production', path:'.')
+                validate(stage:'ldap/overlays/staging', path:'.')
             }
         }
         
